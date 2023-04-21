@@ -10,7 +10,7 @@
 
 '''
 
-from math import sqrt
+# from math import sqrt
 # import math
 #
 #
@@ -65,7 +65,7 @@ position: web developer
 положительные числа.
 '''
 # my_list = [20, -3, 15, 2, -1, -21]
-# filtered = list(filter(lambda x: x >= 0, my_list))
+# filtered = list(filter(lambda x: x > 0, my_list))
 #
 # print(filtered)
 # print(id(my_list))
@@ -92,14 +92,14 @@ reduce() последовательно применяет функцию-арг
 
 # from functools import reduce
 #
-# my_list = [20, -3, 15, 2, -1, -21]
+# my_list = [20, -3, 15, 2, -1, -21, 5, -45]
 # result = reduce(lambda x, y: x * y, my_list)           # или x+y, или x-y, и т.д.
 # print(result)
 
 
 # ---------------- вариант_2 - после ревью ----------------------------------
 
-# from functools import reduce
+from functools import reduce
 # print(reduce(lambda x, y: x*y, my_list))
 
 
@@ -184,8 +184,9 @@ time.sleep(5)  - задержка начала работы функции в с
 
 '''
 
+
 # from my_calc import *
-# #
+#
 # print(addition(8, 15))
 # print(subtraction(48, 26.4))
 # print(multiplication(13, 4))
@@ -196,7 +197,7 @@ time.sleep(5)  - задержка начала работы функции в с
 
 # --------------------------------------------------------------------------------------------------
 
-# from my_calc import addition as add
+from my_calc import addition as add
 #
 # print(add(3, 12))
 #
@@ -208,9 +209,9 @@ time.sleep(5)  - задержка начала работы функции в с
 
 # -----------------------------------------------------------------------------------------------
 
-from my_calc import addition as add, subtraction as sb, multiplication as ml, division as dv, remain as rm
-#
-# print(ad(8, 15))
+# from my_calc import addition as add, subtraction as sb, multiplication as ml, division as dv, remain as rm
+# #
+# print(add(8, 15))
 # print(sb(48, 26.4))
 # print(ml(13, 4))
 # print(dv(35, 12))
@@ -227,7 +228,7 @@ from my_calc import addition as add, subtraction as sb, multiplication as ml, di
 #
 # ml_res = ml(5, 37)
 # print(ml_res)
-#
+
 # dv_res = dv(585, 15)
 # print(dv_res)
 #
