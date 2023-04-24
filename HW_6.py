@@ -30,3 +30,6 @@ http://suninjuly.github.io/cats.html
 
 # вариант_3_XPATH
 # //div[@class='row']/div[5]/div/div/p   --- по элементам сверху вниз
+
+
+
