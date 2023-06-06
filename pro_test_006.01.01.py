@@ -1,13 +1,3 @@
-''' Сайт  https://openweathermap.org/
-
-- написать тесты к сайту (любые)
-  (проект "OpenWeather_06")
-
-- запушить проект с тестами для сайта на Git - это уже от себя :))
-
-
-'''
-
 import time
 from selenium import webdriver
 import pytest
@@ -60,3 +50,4 @@ def test_tc_006_01_01_dashboard_img_displayed(driver, open_and_load_main_page, w
 
     expected_dashboard_img = driver.find_element(*dashboard_img_locator)
     assert expected_dashboard_img.is_displayed()
+

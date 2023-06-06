@@ -23,6 +23,7 @@
 
 
 ---------- КОСТРУКТОР (метод __INIT__) -------------------
+
 - в ООП конструктором класса называют метод, который автоматически вызывается при создании объектов.
   Его также можно назвать КОНСТРУКТОРОМ ОБЪЕКТОВ КЛАССА.
 
@@ -98,34 +99,44 @@
 
 '''
 
+
+class Dog:                                               # class - ключевое слово (создание шаблона)
+    biology_class = 'Animal'                             # статический атрибут класса Dog, относится ко всем объектам класса
+
+    def __init__(self, name, age, weight, color):             # метод __init__ создаёт динамические атрибуты (name, weight, color)
+        self._name = name                                 # self (свойство) - ссылка на только что созданный объект
+        self.age = age
+        self.weight = weight
+        self.__color = color
 #
-# class Dog:                                               # class - ключевое слово (создание шаблона)
-#     biology_class = 'Animal'                             # статический атрибут класса Dog, относится ко всем объектам класса
-#
-#     def __init__(self, name, weight, color):             # метод __init__ создаёт динамические атрибуты (name, weight, color)
-#         self._name = name                                 # self (свойство) - ссылка на только что созданный объект
-#         self.weight = weight
-#         self.__color = color
-#
-#     # def run(self):                                       # создали метод run (бегать)
-# #         return 'I can run!'
+    def run(self):                                       # создали метод run (бегать) - (название метода придумываем сами)
+        return 'I can run!'
 # #
-#     def get_name(self):                                  # метод (get), который возвращает имя
-#         return f'Hello! My name is {self._name}.'         # так получим имя
-# #
-#     def set_name(self, new_name):                           # метод (set) изменяет значение атрибута
-#         self._name = new_name
+    def get_name(self):                                  # метод (get), который возвращает имя - (название метода придумываем сами)
+        return f'Hello! My name is {self._name}.'         # так получим имя
+#
+    def set_name(self, new_name):                           # метод (set) изменяет значение атрибута
+        self._name = new_name
+
+    def get_info(self):                                    # метод вернёт информацию о экземпляре класса (название метода придумываем сами)
+        print(f'Собака {self._name} {self.age} лет')
+
+    def speak(self, sound):
+        self.sound = sound
+        print(f'Собака говорит {self.sound}')
 
 
-# dog1 = Dog('Bobik', 3, 'brown')                         # создали объект класса Dog с указанием его атрибутов (аргументов)
-# print(dog1._name)                                        # так можно получить имя объекта
-# print(dog1.get_name())                                  # метод get_name выдаст имя с фразой
-# # print(dog1.color)
-# print(dog1.set_name('Sharik'))                          #  через set изменили значение атрибута _name
-# print(dog1.get_name())                                  # вызвали name после изменений
+dog1 = Dog('Bobik', 5, 12, 'brown')                         # создали объект класса Dog с указанием его атрибутов (аргументов)
+print(dog1._name)                                        # так можно получить имя объекта
+print(dog1.get_name())                                  # метод get_name выдаст имя с фразой
+# print(dog1.color)
+print(dog1.set_name('Sharik'))                          #  через set изменили значение атрибута _name
+print(dog1.get_name())                                  # вызвали name после изменений
 # print(dog1._name)                                       # или так можно вызвать _name
 # print(dog1.__dict__)
 # print(dog1._Dog__color)                                 # доступ к значению атрибута Private
+dog1.get_info()                                         # метод get_info() вернёт информацию о экземпляре класса
+dog1.speak('Гав')
 
 
 # dog2 = Dog('Rex', 12, 'black')
@@ -135,6 +146,32 @@
 # dog2.name = 'Snoopy'                                 # изменили значение атрибута
 # print(dog2.get_name())                               # метод get
 # print(dog2.__dict__)                                 # с изменённым значением
+
+
+class Cat:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def get_info(self):
+        print(f'Кошке {self.name} {self.age} лет')
+
+    def speak(self, sound):
+        self.sound = sound
+        print(f'Кошка говорит {self.sound}')
+
+
+cat1 = Cat('Ксюша', 3)
+cat1.get_info()
+cat1.speak('Мяу')
+
+
+
+
+
+
+
+
 
 
 # -------------- НАСЛЕДОВАНИЕ -----------------------
